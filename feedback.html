@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback - Samarth Mobile Shop</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .feedback-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px gray;
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0a4fa3;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0a4fa3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #06386b;
+        }
+    </style>
+
+    <script>
+        function submitFeedback() {
+            var name = document.getElementById("name").value;
+            var mobile = document.getElementById("mobile").value;
+            var message = document.getElementById("message").value;
+
+            if(name == "" || mobile == "" || message == ""){
+                alert("Please fill all fields before submitting.");
+                return false;
+            }
+            else{
+                alert("Thank you " + name + "! Your feedback has been submitted successfully.");
+                document.getElementById("feedbackForm").reset();
+                return false;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="feedback-form">
+
+    <h2>Customer Feedback</h2>
+
+    <form id="feedbackForm" onsubmit="return submitFeedback()">
+        <input type="text" id="name" placeholder="Enter Your Name">
+        <input type="text" id="mobile" placeholder="Enter Mobile Number">
+        <textarea id="message" placeholder="Enter Your Feedback" rows="4"></textarea>
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    <br>
+    <a href="index.html">← Back to Home</a>
+
+</div>
+
+</body>
+</html>
